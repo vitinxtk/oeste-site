@@ -1,0 +1,455 @@
+/* Reset universal */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Importa as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #000000;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre a logo e o status "No ar" */
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+#live-status a {
+    display: flex;
+    align-items: center;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 16px;
+    font-size: 0.85em;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    transition: background-color 0.3s;
+}
+
+#live-status a:hover {
+    background-color: #d60000;
+}
+
+/* A bolinha que pulsa */
+#live-status a span {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 8px; /* Era margin-left, corrigido para ser mais flexível */
+    animation: pulse 1.5s infinite;
+}
+
+/* Animação de pulsar */
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+/* --- ESTILOS DA BARRA DE NAVEGAÇÃO (HEADER) --- */
+.main-header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1320px;
+    margin: 0 80px;
+    padding: 0 20px;
+}
+
+
+.logo img {
+    width: auto;
+    height: 32px;
+
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ccc;
+}
+
+.nav-button {
+    border: 1px solid #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1a;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    padding: 10px 0;
+    border-top: 2px solid #fff;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background-color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.search-icon a {
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+
+/* --- SEÇÃO PRINCIPAL (ESTILO BETHEL) --- */
+.bethel-like-section {
+    background-image: url('imagens/RINDO GRANDE.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.bethel-like-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+.bethel-like-section .bethel-title,
+.bethel-like-section .bethel-subtitle,
+.bethel-like-section .cta-button {
+    position: relative;
+    z-index: 2;
+}
+
+.bethel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5em;
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.bethel-subtitle {
+    font-size: 1.5em;
+    color: #e0e0e0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 30px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+
+/* --- SEÇÃO DE VÍDEO COM CAIXAS DE INFO --- */
+.video-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Container das caixas de informação sobre o vídeo */
+.info-boxes-container {
+    position: absolute;
+    /* EDITADO: Ajuste fino de 5vh para 7vh para subir um pouco mais */
+    bottom: 0vh;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Estilo individual de cada caixa */
+.info-box {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 300px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.video-section.is-visible .info-box {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.video-section.is-visible .info-box:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.video-section.is-visible .info-box:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.info-box h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.info-box p,
+.info-box ul li {
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.8em;
+    margin: 0 12px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ddd;
+}
+
+
+/* --- RODAPÉ --- */
+.main-footer {
+    background-color: #000;
+    color: #aaa;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9em;
+}
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+    .bethel-title {
+        font-size: 3.5em;
+    }
+
+    .bethel-subtitle {
+        font-size: 1.3em;
+    }
+
+    .info-boxes-container {
+        gap: 20px;
+        /* EDITADO: Ajuste proporcional para telas menores */
+        bottom: 3vh;
+    }
+}
+
+@media (max-width: 850px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        text-align: center;
+    }
+
+    .dropdown-content a {
+        color: #f0f0f0;
+        font-size: 0.9em;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .search-icon {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 480px) {
+    .bethel-title {
+        font-size: 2.5em;
+    }
+
+    .bethel-subtitle {
+        font-size: 1.1em;
+        padding: 0 10px;
+    }
+
+    .info-box {
+        width: 90%;
+    }
+
+    .info-boxes-container {
+        padding: 10px;
+        gap: 10px;
+    }
+}
+
